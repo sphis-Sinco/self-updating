@@ -1,11 +1,15 @@
 package;
 
 import flixel.FlxState;
+import selfupdating.UpdateChecker;
 
 class PlayState extends FlxState
 {
 	override public function create()
 	{
+		UpdateChecker.set_url("https://raw.githubusercontent.com/sphis-Sinco/self-updating/refs/heads/main/version.json");
+		UpdateChecker.checkForUpdates();
+
 		super.create();
 	}
 

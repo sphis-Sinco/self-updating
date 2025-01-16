@@ -2,7 +2,7 @@ package selfupdating;
 
 import haxe.Http;
 
-class Checker
+class UpdateChecker
 {
 	static var GIT_URL:String = "";
 
