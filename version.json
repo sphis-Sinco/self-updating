@@ -1,5 +1,6 @@
 {
     "version": "0.0.0",
     "releasenote": "inital release",
-    "updatetype": "ASSETS"
+    "updatetype": "ASSETS",
+    "assets_to_download": []
 }
