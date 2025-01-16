@@ -7,7 +7,7 @@ class PlayState extends FlxState
 {
 	override public function create()
 	{
-		UpdateChecker.set_url("https://raw.githubusercontent.com/sphis-Sinco/self-updating/refs/heads/main/version.json");
+		UpdateChecker.set_url("https://raw.githubusercontent.com/sphis-Sinco/self-updating/refs/heads/main");
 		UpdateChecker.checkForUpdates();
 
 		super.create();
