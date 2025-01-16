@@ -1,5 +1,7 @@
 package selfupdating;
 
+import haxe.Http;
+
 class Checker
 {
 	static var GIT_URL:String = "";
@@ -11,6 +13,19 @@ class Checker
 
 	public static function checkForUpdates()
 	{
-		// this is where we are going to do the checking shit
+		var web_file = new Http(GIT_URL);
+
+		web_file.onData = function(data:String)
+		{
+			var result:VersionFile = haxe.Json.parse(data);
+			trace('File Version: ${result.version}');
+		}
+
+		web_file.onError = function(error)
+		{
+			trace('error: $error');
+		}
+
+		web_file.request();
 	}
 }
