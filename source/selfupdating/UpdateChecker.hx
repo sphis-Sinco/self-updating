@@ -33,6 +33,7 @@ class UpdateChecker
 						var filecontentcall = new Http('$GIT_URL/assets/$file');
 						filecontentcall.onData = function(data:String)
 						{
+							trace("Downloaded: " + 'assets/$file');
 							File.saveContent('assets/$file', data);
 						}
 
