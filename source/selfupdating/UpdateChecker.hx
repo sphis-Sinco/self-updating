@@ -20,7 +20,13 @@ class UpdateChecker
 		web_file.onData = function(data:String)
 		{
 			var result:VersionFile = haxe.Json.parse(data);
-			trace('File Version: ${result.version}');
+			switch (result.updatetype)
+			{
+				case ASSETS:
+					trace("Update is downloadable");
+				case REINSTALL:
+					trace("Update is not downloadable");
+			}
 		}
 
 		web_file.onError = function(error)
