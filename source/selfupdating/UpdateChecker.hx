@@ -1,7 +1,5 @@
 package selfupdating;
 
-import haxe.Http;
-
 class UpdateChecker
 {
 	static var GIT_URL:String = "";
@@ -13,7 +11,11 @@ class UpdateChecker
 
 	public static function checkForUpdates()
 	{
-		var web_file = new Http(GIT_URL);
+		#if hl
+		return;
+		#end
+
+		var web_file = new haxe.Http(GIT_URL);
 
 		web_file.onData = function(data:String)
 		{
