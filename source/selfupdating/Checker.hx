@@ -2,7 +2,7 @@ package selfupdating;
 
 class Checker
 {
-	public static var GIT_URL:String = "";
+	static var GIT_URL:String = "";
 
 	public static function set_url(new_url:String)
 	{
